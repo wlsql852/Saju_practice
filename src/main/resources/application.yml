@@ -11,7 +11,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create   #첫번째는 create 두번째는 none
+      ddl-auto: none   #첫번째는 create 두번째는 none
     show-sql: true
     defer-datasource-initialization: true
     properties:
@@ -20,7 +20,7 @@ spring:
 #    database-platform: org.hibernate.dialect.MySQLDialect
   sql:
     init:
-      mode: always    #첫번째는 always 두번째는 never
+      mode: never    #첫번째는 always 두번째는 never
 logging:
   level:
     org.hibernate.engine.jdbc.env.internal: DEBUG
