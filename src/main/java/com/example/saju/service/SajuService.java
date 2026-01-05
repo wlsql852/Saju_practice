@@ -1,10 +1,10 @@
 package com.example.saju.service;
 
-import com.example.saju.dto.SaJuResponseDto;
-import com.example.saju.dto.SajuRequestDto;
-import com.example.saju.dto.Pillar;
 import com.example.saju.common.CalendarType;
 import com.example.saju.common.GenderType;
+import com.example.saju.dto.BirthRequestDto;
+import com.example.saju.dto.Pillar;
+import com.example.saju.dto.SaJuResponseDto;
 import com.example.saju.entity.Manse;
 import com.example.saju.exception.SajuErrorCode;
 import com.example.saju.exception.SajuException;
@@ -27,7 +27,7 @@ public class SajuService {
     /**
      * 생년월일시를 사주로 변환(메인로직)
      */
-    public SaJuResponseDto convertBirthToSaju(SajuRequestDto requestDto) {
+    public SaJuResponseDto convertBirthToSaju(BirthRequestDto requestDto) {
         CalendarType birthDayType = CalendarType.of(requestDto.birthType());
         GenderType gender = GenderType.of(requestDto.gender());
         LocalTime time  = requestDto.time() == null? LocalTime.of(12,0) : requestDto.time();  //시간 미입력시 12:00
